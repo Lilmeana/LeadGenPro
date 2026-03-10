@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LeadGenPro | B2B Marketing Automation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
+        .page { display: none; }
+        .page.active { display: block; }
+        .gradient-bg { background: linear-gradient(135deg, #f8fafc 0%, #eff6ff 100%); }
+        .gradient-text { background: linear-gradient(90deg, #2563eb, #7c3aed); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .glass-card { background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(10px); }
+    </style>
+</head>
+<body class="bg-white text-slate-900 antialiased">
+
+    <nav id="main-nav" class="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-md border-b border-slate-100">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-8">
+                <a href="javascript:void(0)" onclick="showPage('home')" class="text-2xl font-bold text-blue-600 tracking-tight">LeadGenPro</a>
+                <div class="hidden md:flex gap-6 text-sm font-semibold text-slate-600">
+                    <a href="javascript:void(0)" onclick="showPage('home')" class="hover:text-blue-600 transition">Product</a>
+                    <a href="javascript:void(0)" onclick="showPage('about')" class="hover:text-blue-600 transition">About Us</a>
+                    <a href="javascript:void(0)" onclick="showPage('demo')" class="hover:text-blue-600 transition">Product Demo</a>
+                    <a href="javascript:void(0)" onclick="scrollToPricing()" class="hover:text-blue-600 transition">Pricing</a>
+                </div>
+            </div>
+            <div class="flex items-center gap-4">
+                <button onclick="showPage('login')" class="text-sm font-semibold px-4 py-2 hover:text-blue-600">Login</button>
+                <button onclick="showPage('contact')" class="hidden lg:block text-sm font-semibold border border-slate-200 px-4 py-2 rounded-lg hover:bg-slate-50 transition">Talk to Sales</button>
+                <button onclick="showPage('signup')" class="bg-blue-600 text-white text-sm font-semibold px-5 py-2.5 rounded-lg hover:bg-blue-700 transition shadow-lg shadow-blue-200">Start Free Trial</button>
+            </div>
+        </div>
+    </nav>
+
+    <div id="home" class="page active">
+        <header class="gradient-bg pt-32 pb-32 px-6">
+            <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
+                <div class="space-y-8">
+                    <h1 class="text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight">
+                        Automate Lead Generation and Turn <span class="gradient-text">Visitors Into Customers</span>
+                    </h1>
+                    <p class="text-xl text-slate-600 leading-relaxed max-w-lg">
+                        Capture, nurture, and convert leads automatically with LeadGenPro's AI-powered marketing automation platform.
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <button onclick="showPage('signup')" class="bg-blue-600 text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-blue-700 transition">Start Free Trial</button>
+                        <button onclick="showPage('demo')" class="bg-white border border-slate-200 px-8 py-4 rounded-xl font-bold text-lg hover:bg-slate-50 transition shadow-sm">Request a Demo</button>
+                    </div>
+                </div>
+                <div class="relative">
+                    <div class="bg-white rounded-2xl shadow-2xl border border-slate-100 p-4 transform lg:rotate-2">
+                        <div class="flex items-center gap-2 mb-4 border-b border-slate-100 pb-3">
+                            <div class="w-3 h-3 rounded-full bg-red-400"></div>
+                            <div class="w-3 h-3 rounded-full bg-amber-400"></div>
+                            <div class="w-3 h-3 rounded-full bg-emerald-400"></div>
+                        </div>
+                        <div class="grid grid-cols-3 gap-4 mb-6">
+                            <div class="h-20 bg-blue-50 rounded-lg p-3">
+                                <div class="text-[10px] text-blue-600 font-bold uppercase">Total Leads</div>
+                                <div class="text-2xl font-bold">12,482</div>
+                            </div>
+                            <div class="h-20 bg-emerald-50 rounded-lg p-3">
+                                <div class="text-[10px] text-emerald-600 font-bold uppercase">Conv. Rate</div>
+                                <div class="text-2xl font-bold">4.2%</div>
+                            </div>
+                            <div class="h-20 bg-purple-50 rounded-lg p-3">
+                                <div class="text-[10px] text-purple-600 font-bold uppercase">MQLs</div>
+                                <div class="text-2xl font-bold">850</div>
+                            </div>
+                        </div>
+                        <div class="h-48 bg-slate-50 rounded-xl flex items-end justify-between p-4 gap-2">
+                            <div class="w-full bg-blue-200 h-1/2 rounded-t"></div>
+                            <div class="w-full bg-blue-400 h-3/4 rounded-t"></div>
+                            <div class="w-full bg-blue-600 h-full rounded-t"></div>
+                            <div class="w-full bg-blue-300 h-2/3 rounded-t"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <section class="py-16 border-y border-slate-100 bg-white">
+            <div class="max-w-7xl mx-auto px-6">
+                <p class="text-center text-slate-400 text-sm font-semibold mb-10 uppercase tracking-widest">Trusted by industry leaders</p>
+                <div class="flex flex-wrap justify-center items-center gap-12 md:gap-20 opacity-70 grayscale hover:grayscale-0 transition-all duration-500">
+                    <div class="flex items-center gap-2">
+                        <svg class="w-8 h-8 text-[#96bf48]" fill="currentColor" viewBox="0 0 24 24"><path d="M4.192 6.428l-2.99 18.274L0 23.447V6.037l4.192.391zm15.616-1.503l.354 1.411-4.721 1.487-1.41-4.722 1.411-.354 4.366 2.178zm3.692 1.411l.5 1.936-2.42.624-.5-1.936 2.42-.624zm-1.846-3.872l.5 1.936-2.42.624-.5-1.936 2.42-.624zM11.96 0L9.408 6.428h5.104L11.96 0zm7.848 18.232l.354 1.411-4.722 1.487-1.41-4.721 1.41-.354 4.368 2.177z"/></svg>
+                        <span class="text-xl font-bold text-slate-700">Shopify</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <svg class="w-7 h-7" viewBox="0 0 24 24"><path fill="#E01E5A" d="M5.042 15.165a2.528 2.528 0 1 1-2.52 2.528 2.52 2.52 0 0 1 2.52-2.528z"/><path fill="#36C5F0" d="M14.209 2.52a2.528 2.528 0 1 1 2.528 2.52 2.52 2.52 0 0 1-2.528-2.52z"/><path fill="#2EB67D" d="M18.958 15.165a2.528 2.528 0 1 1 2.528 2.528 2.52 2.52 0 0 1-2.528-2.528z"/><path fill="#ECB22E" d="M9.791 21.48a2.528 2.528 0 1 1-2.528-2.528 2.52 2.52 0 0 1 2.528 2.528z"/></svg>
+                        <span class="text-xl font-bold text-slate-700">Slack</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <div class="w-7 h-7 bg-[#ff4f00] rounded flex items-center justify-center text-white font-black text-xs">Z</div>
+                        <span class="text-xl font-bold text-slate-700">Zapier</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <svg class="w-7 h-7 text-[#ff7a59]" fill="currentColor" viewBox="0 0 24 24"><path d="M22.5 12c0-5.799-4.701-10.5-10.5-10.5S1.5 6.201 1.5 12s4.701 10.5 10.5 10.5c1.47 0 2.855-.304 4.108-.853l-3.328-3.328a6.75 6.75 0 1 1 4.773-4.773l3.328 3.328A10.457 10.457 0 0 0 22.5 12z"/></svg>
+                        <span class="text-xl font-bold text-slate-700">HubSpot</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-24 max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold mb-4">Core Features</h2>
+                <p class="text-slate-600">Everything you need to scale your B2B marketing.</p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="p-8 rounded-2xl border border-slate-100 hover:border-blue-500 transition-all hover:shadow-xl group">
+                    <div class="w-12 h-12 bg-blue-50 text-blue-600 rounded-lg flex items-center justify-center mb-6 group-hover:bg-blue-600 group-hover:text-white transition">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Lead Capture</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">Embeddable forms and pop-ups that capture data seamlessly.</p>
+                </div>
+                <div class="p-8 rounded-2xl border border-slate-100 hover:border-blue-500 transition-all hover:shadow-xl group">
+                    <div class="w-12 h-12 bg-blue-50 text-blue-600 rounded-lg flex items-center justify-center mb-6 group-hover:bg-blue-600 group-hover:text-white transition">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Automation</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">Triggered email sequences based on user behavior.</p>
+                </div>
+                <div class="p-8 rounded-2xl border border-slate-100 hover:border-blue-500 transition-all hover:shadow-xl group">
+                    <div class="w-12 h-12 bg-blue-50 text-blue-600 rounded-lg flex items-center justify-center mb-6 group-hover:bg-blue-600 group-hover:text-white transition">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Lead Scoring</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">Identify high-value prospects with AI-driven scoring.</p>
+                </div>
+                <div class="p-8 rounded-2xl border border-slate-100 hover:border-blue-500 transition-all hover:shadow-xl group">
+                    <div class="w-12 h-12 bg-blue-50 text-blue-600 rounded-lg flex items-center justify-center mb-6 group-hover:bg-blue-600 group-hover:text-white transition">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Integrations</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">Sync data instantly with Salesforce, Zoho, and more.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-24 bg-white px-6">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl font-bold mb-4">What Our Customers Say</h2>
+                    <p class="text-slate-600">Join 5,000+ teams closing deals faster.</p>
+                </div>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="p-8 rounded-2xl bg-slate-50 border border-slate-100 italic relative">
+                        <span class="text-6xl text-blue-200 absolute top-4 left-4 font-serif">“</span>
+                        <p class="text-slate-700 mb-6 relative z-10 pt-4">LeadGenPro doubled our sales pipeline in just three months. The AI lead scoring is scarily accurate.</p>
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-full bg-blue-600 flex items-center justify-center text-white font-bold">JD</div>
+                            <div>
+                                <div class="font-bold text-sm">Jane Doe</div>
+                                <div class="text-xs text-slate-500">Head of Growth, TechFlow</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-8 rounded-2xl bg-slate-50 border border-slate-100 italic relative">
+                        <span class="text-6xl text-blue-200 absolute top-4 left-4 font-serif">“</span>
+                        <p class="text-slate-700 mb-6 relative z-10 pt-4">The Salesforce integration was seamless. We saved about 20 hours a week on manual data entry.</p>
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-full bg-purple-600 flex items-center justify-center text-white font-bold">MT</div>
+                            <div>
+                                <div class="font-bold text-sm">Marcus Thompson</div>
+                                <div class="text-xs text-slate-500">Sales Ops, Global Inc.</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-8 rounded-2xl bg-slate-50 border border-slate-100 italic relative">
+                        <span class="text-6xl text-blue-200 absolute top-4 left-4 font-serif">“</span>
+                        <p class="text-slate-700 mb-6 relative z-10 pt-4">The best marketing tool we've added to our stack this year. Highly recommended for B2B teams.</p>
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-full bg-emerald-600 flex items-center justify-center text-white font-bold">SC</div>
+                            <div>
+                                <div class="font-bold text-sm">Sarah Chen</div>
+                                <div class="text-xs text-slate-500">VP Marketing, SaaSly</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="pricing-section" class="py-24 bg-slate-50 px-6">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl font-bold mb-4">Pricing Plans</h2>
+                    <p class="text-slate-600">Scale your lead generation without breaking the bank.</p>
+                </div>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="p-10 rounded-2xl border border-slate-200 bg-white text-center hover:shadow-xl transition">
+                        <h3 class="text-xl font-bold mb-2">Starter</h3>
+                        <div class="text-4xl font-extrabold mb-6">$49<span class="text-lg text-slate-400 font-normal">/mo</span></div>
+                        <ul class="text-slate-600 space-y-4 mb-8 text-sm">
+                            <li>✓ 1,000 Leads</li>
+                            <li>✓ Basic Automation</li>
+                            <li>✓ Email Support</li>
+                        </ul>
+                        <button onclick="showPage('signup')" class="w-full py-3 border border-blue-600 text-blue-600 rounded-lg font-bold hover:bg-blue-50 transition">Start Free Trial</button>
+                    </div>
+                    <div class="p-10 rounded-2xl border-2 border-blue-600 text-center shadow-2xl relative scale-105 bg-white z-10">
+                        <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-blue-600 text-white text-xs font-bold px-4 py-1 rounded-full">MOST POPULAR</div>
+                        <h3 class="text-xl font-bold mb-2">Growth</h3>
+                        <div class="text-4xl font-extrabold mb-6">$99<span class="text-lg text-slate-400 font-normal">/mo</span></div>
+                        <ul class="text-slate-600 space-y-4 mb-8 text-sm">
+                            <li>✓ 10,000 Leads</li>
+                            <li>✓ Advanced Lead Scoring</li>
+                            <li>✓ Priority CRM Sync</li>
+                        </ul>
+                        <button onclick="showPage('signup')" class="w-full py-3 bg-blue-600 text-white rounded-lg font-bold hover:bg-blue-700 transition">Start Free Trial</button>
+                    </div>
+                    <div class="p-10 rounded-2xl border border-slate-200 bg-white text-center hover:shadow-xl transition">
+                        <h3 class="text-xl font-bold mb-2">Pro</h3>
+                        <div class="text-4xl font-extrabold mb-6">$199<span class="text-lg text-slate-400 font-normal">/mo</span></div>
+                        <ul class="text-slate-600 space-y-4 mb-8 text-sm">
+                            <li>✓ Unlimited Leads</li>
+                            <li>✓ AI Agent Access</li>
+                            <li>✓ Dedicated Manager</li>
+                        </ul>
+                        <button onclick="showPage('signup')" class="w-full py-3 border border-blue-600 text-blue-600 rounded-lg font-bold hover:bg-blue-50 transition">Start Free Trial</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div id="dashboard" class="page bg-slate-50 min-h-screen">
+        <div class="flex">
+            <aside class="w-64 bg-slate-900 h-screen fixed text-white p-6 space-y-8">
+                <div class="text-xl font-bold text-blue-400">LeadGenPro</div>
+                <nav class="space-y-4">
+                    <a href="#" class="block text-blue-400 font-bold">Dashboard</a>
+                    <a href="#" class="block text-slate-400 hover:text-white">Leads</a>
+                    <a href="#" class="block text-slate-400 hover:text-white">Automation</a>
+                    <a href="#" class="block text-slate-400 hover:text-white">Settings</a>
+                </nav>
+                <button onclick="showPage('home')" class="absolute bottom-10 text-slate-500 text-sm hover:text-white">Sign Out</button>
+            </aside>
+            <main class="ml-64 w-full p-10">
+                <header class="flex justify-between items-center mb-10">
+                    <h2 class="text-2xl font-bold">Analytics Overview</h2>
+                    <div class="flex gap-4">
+                        <button class="bg-white border border-slate-200 px-4 py-2 rounded-lg text-sm font-bold">Export CSV</button>
+                        <button class="bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-bold">+ New Campaign</button>
+                    </div>
+                </header>
+                <div class="grid grid-cols-4 gap-6 mb-10">
+                    <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-200">
+                        <p class="text-slate-500 text-sm font-medium">New Leads</p>
+                        <p class="text-3xl font-bold">2,482</p>
+                        <span class="text-emerald-500 text-xs font-bold">+12% vs last month</span>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-200">
+                        <p class="text-slate-500 text-sm font-medium">Conversion Rate</p>
+                        <p class="text-3xl font-bold">3.8%</p>
+                        <span class="text-emerald-500 text-xs font-bold">+0.4% Improvement</span>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-200">
+                        <p class="text-slate-500 text-sm font-medium">Avg. Lead Score</p>
+                        <p class="text-3xl font-bold">84/100</p>
+                        <span class="text-blue-500 text-xs font-bold">High Quality Tier</span>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-200">
+                        <p class="text-slate-500 text-sm font-medium">CRM Syncs</p>
+                        <p class="text-3xl font-bold">1,940</p>
+                        <span class="text-slate-400 text-xs font-bold">Last sync: 2m ago</span>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
+                    <div class="p-6 border-b border-slate-100 font-bold">Recent Inbound Leads</div>
+                    <table class="w-full text-left">
+                        <thead class="bg-slate-50 text-slate-500 text-xs uppercase font-bold">
+                            <tr>
+                                <th class="px-6 py-4">Name</th>
+                                <th class="px-6 py-4">Company</th>
+                                <th class="px-6 py-4">Status</th>
+                                <th class="px-6 py-4">Lead Score</th>
+                                <th class="px-6 py-4">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-sm divide-y divide-slate-100">
+                            <tr>
+                                <td class="px-6 py-4 font-medium">Sarah Jenkins</td>
+                                <td class="px-6 py-4">TechFlow</td>
+                                <td class="px-6 py-4"><span class="bg-emerald-100 text-emerald-700 px-2 py-1 rounded text-xs font-bold">Qualified</span></td>
+                                <td class="px-6 py-4 font-bold text-blue-600">98</td>
+                                <td class="px-6 py-4"><button class="text-slate-400 hover:text-blue-600">View</button></td>
+                            </tr>
+                            <tr>
+                                <td class="px-6 py-4 font-medium">Mark Thompson</td>
+                                <td class="px-6 py-4">Global Inc.</td>
+                                <td class="px-6 py-4"><span class="bg-amber-100 text-amber-700 px-2 py-1 rounded text-xs font-bold">Nurturing</span></td>
+                                <td class="px-6 py-4 font-bold text-blue-600">72</td>
+                                <td class="px-6 py-4"><button class="text-slate-400 hover:text-blue-600">View</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <div id="about" class="page pt-32 px-6 min-h-screen">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-4xl font-extrabold mb-8">Our Mission</h2>
+            <p class="text-xl text-slate-600 leading-relaxed mb-12">
+                Founded in Silicon Valley, LeadGenPro was built by sales engineers who were tired of manual data entry. We believe your sales team should spend time closing, not chasing. Our AI-powered engine automates the "hunt" so you can focus on the "close."
+            </p>
+            <div class="grid md:grid-cols-2 gap-8 mb-20">
+                <div class="bg-slate-50 p-8 rounded-2xl">
+                    <h3 class="font-bold text-xl mb-4 text-blue-600">Why LeadGenPro?</h3>
+                    <p class="text-slate-600">We integrate with your existing tech stack (Salesforce, Slack, HubSpot) in one click to ensure your data stays clean and actionable.</p>
+                </div>
+                <div class="bg-slate-50 p-8 rounded-2xl">
+                    <h3 class="font-bold text-xl mb-4 text-blue-600">Our Growth</h3>
+                    <p class="text-slate-600">Over 5,000+ B2B companies trust us to fuel their pipeline daily, resulting in a 40% average increase in conversion rates.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="demo" class="page pt-32 px-6 bg-slate-900 min-h-screen text-white">
+        <div class="max-w-5xl mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6 mb-12">
+                <div>
+                    <h2 class="text-3xl font-bold mb-2">Lead Life-Cycle Simulation</h2>
+                    <p class="text-slate-400">Experience how our AI handles a lead from first touch to CRM sync.</p>
+                </div>
+                <button onclick="runDemo()" class="bg-blue-600 hover:bg-blue-500 px-8 py-4 rounded-xl font-bold transition shadow-xl shadow-blue-900">Trigger Sample Lead</button>
+            </div>
+
+            <div class="grid lg:grid-cols-3 gap-6" id="demo-grid">
+                <div class="bg-slate-800 p-8 rounded-2xl border border-slate-700 opacity-50 transition-all duration-500" id="step1">
+                    <div class="text-xs font-bold text-blue-400 mb-2 uppercase tracking-widest">1. Capture</div>
+                    <div class="text-lg font-bold mb-4">Form Submission</div>
+                    <div class="bg-slate-900 p-4 rounded-lg text-xs font-mono text-emerald-400" id="step1-data">// Waiting for data...</div>
+                </div>
+                <div class="bg-slate-800 p-8 rounded-2xl border border-slate-700 opacity-50 transition-all duration-500" id="step2">
+                    <div class="text-xs font-bold text-purple-400 mb-2 uppercase tracking-widest">2. AI Scoring</div>
+                    <div class="text-lg font-bold mb-4">Lead Quality Analysis</div>
+                    <div id="step2-score" class="text-4xl font-bold">--</div>
+                </div>
+                <div class="bg-slate-800 p-8 rounded-2xl border border-slate-700 opacity-50 transition-all duration-500" id="step3">
+                    <div class="text-xs font-bold text-orange-400 mb-2 uppercase tracking-widest">3. Action</div>
+                    <div class="text-lg font-bold mb-4">CRM Integration</div>
+                    <div id="step3-status" class="text-sm text-slate-400 leading-relaxed">System standing by...</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="login" class="page pt-40 px-6 min-h-screen bg-slate-50">
+        <div class="max-w-md mx-auto bg-white p-10 rounded-3xl border border-slate-200 shadow-2xl">
+            <h2 class="text-3xl font-bold mb-8 text-center">Welcome Back</h2>
+            <div class="space-y-4">
+                <input type="email" placeholder="Email Address" class="w-full px-4 py-3 rounded-lg border border-slate-200 outline-none focus:ring-2 focus:ring-blue-500">
+                <input type="password" placeholder="Password" class="w-full px-4 py-3 rounded-lg border border-slate-200 outline-none focus:ring-2 focus:ring-blue-500">
+                <button onclick="showPage('dashboard')" class="w-full bg-blue-600 text-white py-3 rounded-lg font-bold hover:bg-blue-700">Login to Dashboard</button>
+                <p class="text-center text-sm text-slate-500">New here? <a href="javascript:void(0)" onclick="showPage('signup')" class="text-blue-600 font-bold">Create an account</a></p>
+            </div>
+        </div>
+    </div>
+
+    <div id="signup" class="page pt-32 px-6 min-h-screen bg-slate-50">
+        <div class="max-w-md mx-auto bg-white p-10 rounded-3xl border border-slate-200 shadow-2xl">
+            <h2 class="text-3xl font-bold mb-8 text-center">Start Free Trial</h2>
+            <div class="space-y-4">
+                <input type="text" placeholder="Company Name" class="w-full px-4 py-3 rounded-lg border border-slate-200 outline-none focus:ring-2 focus:ring-blue-500">
+                <input type="email" placeholder="Work Email" class="w-full px-4 py-3 rounded-lg border border-slate-200 outline-none focus:ring-2 focus:ring-blue-500">
+                <input type="password" placeholder="Create Password" class="w-full px-4 py-3 rounded-lg border border-slate-200 outline-none focus:ring-2 focus:ring-blue-500">
+                <button onclick="showPage('dashboard')" class="w-full bg-blue-600 text-white py-3 rounded-lg font-bold hover:bg-blue-700">Get Started Now</button>
+                <p class="text-center text-sm text-slate-500">Already a member? <a href="javascript:void(0)" onclick="showPage('login')" class="text-blue-600 font-bold">Login</a></p>
+            </div>
+        </div>
+    </div>
+
+    <div id="contact" class="page pt-32 px-6 min-h-screen">
+        <div class="max-w-2xl mx-auto text-center">
+            <h2 class="text-4xl font-bold mb-4">Talk to Sales</h2>
+            <p class="text-slate-600 mb-10">Fill out the form below and one of our experts will be in touch shortly.</p>
+            <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-lg text-left">
+                <div class="grid md:grid-cols-2 gap-4 mb-4">
+                    <input type="text" placeholder="First Name" class="px-4 py-3 rounded-lg border border-slate-200 outline-none focus:ring-2 focus:ring-blue-500">
+                    <input type="text" placeholder="Last Name" class="px-4 py-3 rounded-lg border border-slate-200 outline-none focus:ring-2 focus:ring-blue-500">
+                </div>
+                <input type="email" placeholder="Work Email" class="w-full px-4 py-3 rounded-lg border border-slate-200 outline-none focus:ring-2 focus:ring-blue-500 mb-4">
+                <textarea placeholder="How can we help?" rows="4" class="w-full px-4 py-3 rounded-lg border border-slate-200 outline-none focus:ring-2 focus:ring-blue-500 mb-4"></textarea>
+                <button class="w-full bg-blue-600 text-white py-3 rounded-lg font-bold">Submit Request</button>
+            </div>
+        </div>
+    </div>
+
+    <footer id="main-footer" class="mt-24 py-20 bg-slate-900 text-slate-400 px-6">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-4 gap-12">
+            <div>
+                <span class="text-2xl font-bold text-white block mb-6">LeadGenPro</span>
+                <p class="text-sm">B2B automation for high-growth teams. Built for scale, powered by AI.</p>
+            </div>
+            <div>
+                <h4 class="text-white font-bold mb-6">Product</h4>
+                <ul class="space-y-3 text-sm">
+                    <li><a href="javascript:void(0)" onclick="showPage('home')" class="hover:text-white transition">Features</a></li>
+                    <li><a href="javascript:void(0)" onclick="showPage('demo')" class="hover:text-white transition">Live Demo</a></li>
+                    <li><a href="javascript:void(0)" onclick="scrollToPricing()" class="hover:text-white transition">Pricing</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-white font-bold mb-6">Company</h4>
+                <ul class="space-y-3 text-sm">
+                    <li><a href="javascript:void(0)" onclick="showPage('about')" class="hover:text-white transition">About Us</a></li>
+                    <li><a href="javascript:void(0)" onclick="showPage('contact')" class="hover:text-white transition">Contact</a></li>
+                    <li><a href="#" class="hover:text-white transition">Careers</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-white font-bold mb-6">Legal</h4>
+                <ul class="space-y-3 text-sm">
+                    <li><a href="#" class="hover:text-white transition">Privacy Policy</a></li>
+                    <li><a href="#" class="hover:text-white transition">Terms of Service</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function showPage(pageId) {
+            document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+            document.getElementById(pageId).classList.add('active');
+            
+            const nav = document.getElementById('main-nav');
+            const footer = document.getElementById('main-footer');
+
+            if(pageId === 'dashboard') {
+                nav.style.display = 'none';
+                footer.style.display = 'none';
+            } else {
+                nav.style.display = 'block';
+                footer.style.display = 'block';
+            }
+            window.scrollTo(0, 0);
+        }
+
+        function scrollToPricing() {
+            showPage('home');
+            setTimeout(() => {
+                document.getElementById('pricing-section').scrollIntoView({ behavior: 'smooth' });
+            }, 100);
+        }
+
+        function runDemo() {
+            const s1 = document.getElementById('step1');
+            const s1Data = document.getElementById('step1-data');
+            const s2 = document.getElementById('step2');
+            const s2Score = document.getElementById('step2-score');
+            const s3 = document.getElementById('step3');
+            const s3Status = document.getElementById('step3-status');
+
+            [s1, s2, s3].forEach(el => el.classList.add('opacity-50'));
+            s1Data.innerText = "// Processing inbound hook...";
+            s2Score.innerText = "--";
+            s2Score.className = "text-4xl font-bold";
+            s3Status.innerText = "System standing by...";
+            
+            setTimeout(() => {
+                s1.classList.remove('opacity-50');
+                s1Data.innerText = "{ name: 'Sarah Chen', role: 'VP Sales', company: 'NeoCloud', email: 's.chen@neocloud.io' }";
+            }, 800);
+
+            setTimeout(() => {
+                s2.classList.remove('opacity-50');
+                s2Score.innerText = "94/100";
+                s2Score.classList.add('text-emerald-400');
+            }, 2000);
+
+            setTimeout(() => {
+                s3.classList.remove('opacity-50');
+                s3Status.innerText = "✓ Syncing to Salesforce Enterprise... ✓ Notification sent to #sales-leads Slack channel!";
+                s3Status.classList.add('text-blue-400');
+            }, 3200);
+        }
+    </script>
+</body>
+</html>
